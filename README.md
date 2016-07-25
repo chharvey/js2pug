@@ -32,7 +32,7 @@ var MyClass = (function () {
   function MyClass() {
     // CONSTRUCTOR
   }
-  return MyClass;
+  return MyClass
 })()
 ```
 
@@ -43,7 +43,7 @@ out (`file.js.pug` or `file.js.jade`):
     function MyClass() {
       //- CONSTRUCTOR
     }
-    return MyClass;
+    return MyClass
   })()
 ```
 
