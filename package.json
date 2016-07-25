@@ -1,0 +1,27 @@
+{
+  "name": "js2pug",
+  "version": "1.0.0",
+  "description": "Converts Javascript into Pug",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "js2pug": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chharvey/js2pug.git"
+  },
+  "keywords": [
+    "javascript",
+    "pug",
+    "jade"
+  ],
+  "author": "Chris Harvey <chrisharvey2pi@gmail.com> (https://chharvey.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chharvey/js2pug/issues"
+  },
+  "homepage": "https://github.com/chharvey/js2pug#readme"
+}
