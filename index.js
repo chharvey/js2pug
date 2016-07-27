@@ -1,5 +1,13 @@
 #! /usr/bin/env node
 
+// Algorithm
+// - take contents of file, named 'file.js'
+// - search-and-replace every `\n` (U+000A line feed) with
+//   `\n  ` (U+000A line feed, U+0020 space, U+0020 space) (for indentation)
+// - prepend `-\n` (U+002D hyphen-minus, U+000A line feed)
+// - search-and-replace every `//` with `//-` (for unbuffered comments)
+// - write to new file 'file.js.pug'
+
 var
     fs = require('fs')
   , path = require('path')
