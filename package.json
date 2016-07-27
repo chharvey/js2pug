@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/chharvey/js2pug/issues"
   },
-  "homepage": "https://github.com/chharvey/js2pug#readme"
+  "homepage": "https://github.com/chharvey/js2pug#readme",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
 }

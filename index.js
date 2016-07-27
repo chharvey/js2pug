@@ -3,14 +3,19 @@
 var
     fs = require('fs')
   , path = require('path')
+  , program = require('commander')
 
-var sourcefile = path.parse(path.normalize(process.cwd() + '/' + process.argv[2])) // process.cwd() === directory from which node was run
+program
+  .option('-j, --jade', 'change the output extension to .jade')
+  .arguments('<file>')
+  .parse(process.argv)
+
+var sourcefile = path.parse(path.normalize(process.cwd() + '/' + program.args[0]))
   , sourcefilestr = sourcefile.dir + '/' + sourcefile.base
-  , ext = (process.argv[3] === '--jade') ? '.jade' : '.pug'
 
 fs.readFile(sourcefilestr, 'utf8', function (err, data) {
   if (err) return console.error('There was an error reading the file: ', err)
-  var outfilestr = sourcefilestr + ext
+  var outfilestr = sourcefilestr + ((program.jade) ? '.jade' : '.pug')
     , outfile = path.parse(outfilestr)
   data = '-\n  ' + data.replace(/\n/g,'\n  ')
   data = data.replace(/\/\//g, '//-')
