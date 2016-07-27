@@ -17,7 +17,7 @@ $ npm install [-g] js2pug
 Currently only available on the command line. Will introduce programmatic support later.
 
 ```
-$ js2pug file.js [--jade]
+$ js2pug [--jade] file.js
 ```
 where `file.js` is the name of your source file, and
 `file.js.pug` will be the name of the output file (in the same directory).
@@ -46,11 +46,3 @@ out (`file.js.pug` or `file.js.jade`):
     return MyClass
   })()
 ```
-
-## Algorithm
-- take contents of file, named 'file.js'
-- search-and-replace every `\n` (U+000A line feed) with
-  `\n  ` (U+000A line feed, U+0020 space, U+0020 space) (for indentation)
-- prepend `-\n` (U+002D hyphen-minus, U+000A line feed)
-- search-and-replace every `//` with `//-` (for unbuffered comments)
-- write to new file 'file.js.pug'
