@@ -6,8 +6,7 @@ a [**Pug**](https://github.com/pugjs/pug) file
 (formerly [Jade](http://jade-lang.com/)),
 containing unbuffered block code.
 
-This is really useful if you want to write your (server-side) Pug data in Javascript
-and also want it available client-side. Just serve both `.js` and `.pug` files!
+This is useful if you want to write your (server-side) Pug data in actual Javascript.
 
 ## Installation & Usage
 ```
