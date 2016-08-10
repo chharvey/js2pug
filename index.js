@@ -1,5 +1,3 @@
-#! /usr/bin/env node
-
 // Algorithm
 // - take contents of file, named 'file.js'
 // - search-and-replace every `\n` (U+000A line feed) with
@@ -13,17 +11,13 @@ var
   , path = require('path')
   , program = require('commander')
 
-program
-  .option('-j, --jade', 'change the output extension to .jade')
-  .arguments('<file>')
-  .parse(process.argv)
-
-var sourcefile = path.parse(path.normalize(process.cwd() + '/' + program.args[0]))
+module.exports = function js2pug(file, jade) {
+var sourcefile = path.parse(path.normalize(process.cwd() + '/' + file))
   , sourcefilestr = sourcefile.dir + '/' + sourcefile.base
 
 fs.readFile(sourcefilestr, 'utf8', function (err, data) {
   if (err) return console.error('There was an error reading the file: ', err)
-  var outfilestr = sourcefilestr + ((program.jade) ? '.jade' : '.pug')
+  var outfilestr = sourcefilestr + ((jade) ? '.jade' : '.pug')
     , outfile = path.parse(outfilestr)
   data = '-\n  ' + data.replace(/\n/g,'\n  ')
   data = data.replace(/\/\//g, '//-')
@@ -32,3 +26,5 @@ fs.readFile(sourcefilestr, 'utf8', function (err, data) {
     console.log('Success! ' + sourcefile.base + ' > ' + outfile.base)
   })
 })
+return
+}
