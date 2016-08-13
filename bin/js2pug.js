@@ -5,7 +5,7 @@ var
   , path = require('path')
 var
     program = require('commander')
-  , js2pug = require('./index.js')
+  , js2pug = require('../')
 
 program
   .option('-j, --jade', 'change the output extension to .jade')
