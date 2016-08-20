@@ -25,7 +25,7 @@ module.exports = function js2pug(file, jade) {
     var outfilestr = sourcefilestr + ((jade) ? '.jade' : '.pug')
       , outfile = path.parse(outfilestr)
     data = '-\n  ' + data.replace(/\n/g,'\n  ')
-    data = data.replace(/\/\//g, '//-')
+    data = data.replace(/\/\/ /g, '//- ')
     fs.writeFile(outfilestr, data, function (err) {
       if (err) return console.error('There was an error writing the file: ', err)
       console.log('Success! ' + sourcefile.base + ' > ' + outfile.base)
